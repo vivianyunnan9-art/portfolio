@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ماريا جميل | صانعة محتوى وأخصائية سيكولوجية المحتوى</title>
+    <!-- Bootstrap 5 RTL -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css">
+    <!-- Google Fonts: Cairo -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #5B3E96;
+            --secondary-color: #7758B8;
+            --accent-color: #C58B65;
+            --dark-bg: #1E1A2B;
+            --page-bg: #F3EFEA;        /* خلفية رملية دافئة مريحة للعين */
+            --section-alt: #EAE4DC;    /* خلفية متبادلة أغمق درجة */
+            --card-bg: #FAF8F5;        /* خلفية الكروت عاجية ناعمة بدل الأبيض الساطع */
+            --border-warm: #E2DBD0;
+            --text-dark: #2B2635;
+            --text-muted: #5F596B;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--page-bg);
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: rgba(243, 239, 234, 0.94);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-warm);
+            box-shadow: 0 2px 12px rgba(43, 38, 53, 0.05);
+        }
+        .navbar-brand {
+            font-weight: 800;
+            color: var(--primary-color) !important;
+            font-size: 1.5rem;
+        }
+        .nav-link {
+            font-weight: 600;
+            color: var(--text-dark) !important;
+            transition: color 0.3s;
+        }
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #ECE6DF 0%, #E6DFEC 100%);
+            border-bottom: 1px solid var(--border-warm);
+            position: relative;
+            overflow: hidden;
+        }
+        .badge-psych {
+            background-color: rgba(91, 62, 150, 0.12);
+            color: var(--primary-color);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        .hero-title {
+            font-weight: 800;
+            font-size: 2.5rem;
+            line-height: 1.35;
+            color: var(--dark-bg);
+        }
+        .hero-title span {
+            color: var(--primary-color);
+        }
+        .hero-subtitle {
+            font-size: 1.12rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin: 20px 0 30px;
+        }
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            border: none;
+            color: #FAF8F5;
+            padding: 12px 30px;
+            border-radius: 12px;
+            font-weight: 700;
+            transition: all 0.3s;
+            box-shadow: 0 8px 20px rgba(91, 62, 150, 0.22);
+        }
+        .btn-primary-custom:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            color: #FAF8F5;
+        }
+        .btn-outline-custom {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 10px 28px;
+            border-radius: 12px;
+            font-weight: 700;
+            transition: all 0.3s;
+            background-color: rgba(250, 248, 245, 0.5);
+        }
+        .btn-outline-custom:hover {
+            background-color: var(--primary-color);
+            color: #FAF8F5;
+        }
+
+        /* Section Titles */
+        .section-padding {
+            padding: 80px 0;
+        }
+        .section-alt-bg {
+            background-color: var(--section-alt);
+            border-top: 1px solid var(--border-warm);
+            border-bottom: 1px solid var(--border-warm);
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-header h2 {
+            font-weight: 800;
+            color: var(--dark-bg);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 12px;
+        }
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            bottom: 0;
+            right: 20%;
+            border-radius: 2px;
+        }
+
+        /* Value Proposition Cards */
+        .feature-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 30px 25px;
+            box-shadow: 0 8px 24px rgba(43, 38, 53, 0.05);
+            border: 1px solid var(--border-warm);
+            height: 100%;
+            transition: transform 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-6px);
+        }
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            border-radius: 14px;
+            background: rgba(91, 62, 150, 0.12);
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+        }
+
+        /* Certificates Filter & Compact Cards */
+        .filter-btn {
+            border: 1px solid var(--border-warm);
+            background: var(--card-bg);
+            color: var(--text-dark);
+            padding: 7px 18px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin: 4px;
+            transition: all 0.3s;
+        }
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary-color);
+            color: #FAF8F5;
+            border-color: var(--primary-color);
+        }
+        .cert-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-warm);
+            box-shadow: 0 4px 14px rgba(43, 38, 53, 0.04);
+            transition: all 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .cert-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(91, 62, 150, 0.12);
+        }
+        .cert-thumb-wrapper {
+            background-color: #E7E1D8;
+            padding: 8px;
+            border-bottom: 1px solid var(--border-warm);
+            cursor: pointer;
+        }
+        .cert-thumb {
+            width: 100%;
+            height: 125px;
+            object-fit: contain;
+            border-radius: 6px;
+            display: block;
+        }
+        .cert-body {
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+        }
+        .cert-category {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            background: rgba(91, 62, 150, 0.1);
+            padding: 3px 10px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 8px;
+            width: fit-content;
+        }
+        .cert-title {
+            font-weight: 700;
+            font-size: 0.92rem;
+            line-height: 1.4;
+            color: var(--dark-bg);
+            margin-bottom: 6px;
+        }
+        .cert-meta {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+        .btn-cert-sm {
+            border: 1.5px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 5px 12px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            transition: all 0.25s;
+            background: transparent;
+        }
+        .btn-cert-sm:hover {
+            background-color: var(--primary-color);
+            color: #FAF8F5;
+        }
+
+        /* Services & Workflow */
+        .service-item {
+            background: var(--card-bg);
+            border-radius: 14px;
+            padding: 25px;
+            border-right: 4px solid var(--primary-color);
+            border-top: 1px solid var(--border-warm);
+            border-left: 1px solid var(--border-warm);
+            border-bottom: 1px solid var(--border-warm);
+            box-shadow: 0 5px 15px rgba(43, 38, 53, 0.04);
+            margin-bottom: 20px;
+            height: calc(100% - 20px);
+        }
+
+        /* Contact & WhatsApp */
+        .cta-box {
+            background: linear-gradient(135deg, #4B327E, #2E214D);
+            color: #FAF8F5;
+            border-radius: 24px;
+            padding: 50px 30px;
+            text-align: center;
+            box-shadow: 0 12px 30px rgba(46, 33, 77, 0.18);
+        }
+        .btn-whatsapp {
+            background-color: #22B559;
+            color: #fff;
+            font-weight: 700;
+            padding: 14px 32px;
+            border-radius: 12px;
+            border: none;
+            font-size: 1.05rem;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        .btn-whatsapp:hover {
+            background-color: #1D9E4D;
+            color: #fff;
+            transform: scale(1.03);
+        }
+
+        /* Floating WhatsApp Button */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            width: 58px;
+            height: 58px;
+            background-color: #22B559;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 6px 20px rgba(34, 181, 89, 0.35);
+            z-index: 1000;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        .floating-whatsapp:hover {
+            transform: scale(1.1);
+            color: #fff;
+        }
+
+        /* Modal warm background */
+        .modal-content {
+            background-color: var(--card-bg);
+            color: var(--text-dark);
+        }
+        .modal-info-box {
+            background-color: var(--section-alt);
+            border: 1px solid var(--border-warm);
+        }
+
+        footer {
+            background-color: var(--dark-bg);
+            color: #C4BDD2;
+            padding: 25px 0;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Maria Gamil<span style="color: var(--accent-color);">.</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav gap-2">
+                    <li class="nav-item"><a class="nav-link" href="#about">لماذا أنا؟</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">خدماتي</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certificates">الشهادات المعتمدة</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">تواصل معي</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="badge-psych">
+                        <i class="fas fa-brain me-1"></i> خريجة علم النفس - جامعة القاهرة | صانعة محتوى (Content Creator)
+                    </div>
+                    <h1 class="hero-title">أصنع محتوى يفهم <span>سيكولوجية جمهورك</span> ويحول المشاهدات إلى تفاعل حقيقي</h1>
+                    <p class="hero-subtitle">
+                        أنا <strong>ماريا جميل</strong>، صانعة محتوى وكاتبة سكربتات أدمج بين دراستي لعلم النفس وفهم دوافع السلوك البشري، وبين أحدث تقنيات صناعة المحتوى، التخطيط التسويقي، وإنتاج الريلز الاحترافية.
+                    </p>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <a href="https://wa.me/201270034575?text=%D8%A3%D9%87%D9%84%D8%A7%D9%8B%20%D9%85%D8%A7%D8%B1%D9%8A%D8%A7%D8%8C%20%D8%B4%D9%81%D8%AA%20%D8%A7%D9%84%D8%A8%D9%88%D8%B1%D8%AA%D9%81%D9%88%D9%84%D9%8A%D9%88%20%D8%A8%D8%AA%D8%A7%D8%B9%D9%83%20%D9%88%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A3%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%D8%A7%D9%83%D9%90%20%D8%A8%D8%AE%D8%B5%D9%88%D8%B5%20%D8%B4%D8%BA%D9%84%20%D8%B5%D9%86%D8%A7%D8%B9%D8%A9%20%D9%85%D8%AD%D8%AA%D9%88%D9%89" target="_blank" class="btn btn-primary-custom">ابدأ مشروعك معي</a>
+                        <a href="#certificates" class="btn btn-outline-custom">استعرض شهاداتي (10)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Psychology + Content Edge -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>ما الذي يميز أسلوبي في صناعة المحتوى؟</h2>
+                <p class="text-muted mt-2">الجمع بين العلم، الإبداع، والتخطيط المنظم</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="icon-box"><i class="fas fa-user-check"></i></div>
+                        <h5 class="fw-bold">سيكولوجية الجمهور (علم النفس)</h5>
+                        <p class="text-muted mb-0">خلفيتي الأكاديمية من جامعة القاهرة تساعدني على تحليل احتياجات الجمهور، اختيار الخطاف (Hook) المناسب، وصياغة رسائل تلامس مشاعر المتابعين.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="icon-box"><i class="fas fa-video"></i></div>
+                        <h5 class="fw-bold">إنتاج متكامل من الفكرة للشاشة</h5>
+                        <p class="text-muted mb-0">من كتابة السكربت والتصوير بالموبايل إلى صناعة الريلز وتوظيف أدوات الذكاء الاصطناعي لرفع جودة وسرعة الإنتاج.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="icon-box"><i class="fas fa-chart-line"></i></div>
+                        <h5 class="fw-bold">تخطيط تسويقي وإدارة احترافية</h5>
+                        <p class="text-muted mb-0">لا أقدم محتوى عشوائياً؛ بل أبني استراتيجية واضحة مدعومة بالتحليل التسويقي وإدارة المهام عبر Notion لضمان الالتزام بالمواعيد.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-padding section-alt-bg">
+        <div class="container">
+            <div class="section-header">
+                <h2>الخدمات التي أقدمها</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="service-item">
+                        <h5 class="fw-bold"><i class="fas fa-pen-nib text-primary me-2"></i> كتابة السكربتات وصناعة المحتوى</h5>
+                        <p class="text-muted mb-0">كتابة سكربتات جذابة للريلز والفيديوهات القصيرة، وصياغة محتوى منصات التواصل الاجتماعي بأسلوب إبداعي مدعوم بأدوات الذكاء الاصطناعي.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="service-item">
+                        <h5 class="fw-bold"><i class="fas fa-film text-primary me-2"></i> إنتاج وتصوير الريلز بالموبايل</h5>
+                        <p class="text-muted mb-0">تخطيط وتصوير محتوى بصري احترافي باستخدام الموبايل (Mobile Photography & Reels) يبرز هوية علامتك التجارية بوضوح.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="service-item">
+                        <h5 class="fw-bold"><i class="fas fa-chess text-primary me-2"></i> بناء استراتيجيات المحتوى والتحليل التسويقي</h5>
+                        <p class="text-muted mb-0">تحويل الأهداف التسويقية إلى خطة تنفيذية عملية مع تحليل أداء المحتوى وفهم سلوك الجمهور المستهدف.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="service-item">
+                        <h5 class="fw-bold"><i class="fas fa-tasks text-primary me-2"></i> تنظيم خطط النشر (Content Calendar)</h5>
+                        <p class="text-muted mb-0">إدارة وتنظيم جداول المحتوى والمهام باحترافية باستخدام مساحة عمل Notion لمتابعة سير العمل خطوة بخطوة.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>الشهادات والدورات التدريبية</h2>
+                <p class="text-muted mt-2">شهادات معتمدة في صناعة المحتوى، التسويق، والتصوير (منصة ينفع - 2026)</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="text-center mb-4">
+                <button class="filter-btn active" data-filter="all">الكل (10)</button>
+                <button class="filter-btn" data-filter="content">صناعة المحتوى والكتابة</button>
+                <button class="filter-btn" data-filter="marketing">التسويق والاستراتيجية</button>
+                <button class="filter-btn" data-filter="production">التصوير وإدارة العمل</button>
+            </div>
+
+            <!-- Certificates Grid -->
+            <div class="row g-3" id="cert-container">
+                <!-- 1 -->
+                <div class="col-6 col-md-4 col-lg-3 cert-item" data-category="content">
+                    <div class="cert-card">
+                        <div class="cert-thumb-wrapper view-cert-trigger">
+                            <img src="certs/WhatsApp Image 2026-11-18 at 12.19.23 PM (3).jpeg" alt="Content Creation By AI" class="cert-thumb">
+                        </div>
+                        <div class="cert-body">
+                            <div>
+                                <span class="cert-category">المحتوى والكتابة</span>
+                                <h6 class="cert-title">Content Creation By AI</h6>
+                                <p class="cert-meta"><i class="fas fa-award me-1"></i> ينفع | يونيو 2026</p>
+                            </div>
+                            <button class="btn-cert-sm w-100 view-cert" 
+                                data-title="Content Creation By AI" 
+                                data-date="2026-06-16"
+                                data-img="certs/WhatsApp Image 2026-11-18 at 12.19.23 PM (3).jpeg"
+                                data-desc="توظيف أدوات الذكاء الاصطناعي في توليد الأفكار، صياغة المحتوى، وتطوير جودة الإنتاج الإبداعي.">
+                                <i class="fas fa-expand me-1"></i> عرض الشهادة
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2 -->
+                <div class="col-6 col-md-4 col-lg-3 cert-item" data-category="content">
+                    <div class="cert-card">
+                        <div class="cert-thumb-wrapper view-cert-trigger">
+                            <img src="certs/WhatsApp Image 2026-11-18 at 12.19.23 PM (5).jpeg" alt="The Origins Of Scriptwriting" class="cert-thumb">
+                        </div>
+                        <div class="cert-body">
+                            <div>
+                                <span class="cert-category">المحتوى والكتابة</span>
+                                <h6 class="cert-title">The Origins Of Scriptwriting</h6>
+                                <p class="cert-meta"><i class="fas fa-award me-1"></i> ينفع | أكتوبر 2026</p>
+                            </div>
+                            <button class="btn-cert-sm w-100 view-cert" 
+                                data-title="The Origins Of Scriptwriting" 
+                                data-date="2026-10-20"
+                                data-img="certs/WhatsApp Image 2026-11-18 at 12.19.23 PM (5).jpeg"
+                                data-desc="أصول كتابة السكربت الاحترافي، بناء القصة، وصياغة المشاهد المؤثرة للمحتوى المرئي.">
+                                <i class="fas fa-expand me-1"></i> عرض الشهادة
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3 -->
+                <div class="col-6 col-md-4 col-lg-3 cert-item" data-category="production">
+                    <div class="cert-card">
+                        <div class="cert-thumb-wrapper view-cert-trigger">
+                            <img src="certs/WhatsApp Image 2026-11-18 at 12.19.23 PM (1).jpeg" alt="Reels From Scratch To Screen" class="cert-thumb">
+                        </div>
+                        <div class="cert-body">
+                            <div>
+                                <span class="cert-category">التصوير والإدارة</span>
+                                <h6 class="cert-title">Reels From Scratch To Screen</h6>
+                                <p class="cert-meta"><i class="fas fa-award me-1"></i> ينفع | يوليو 2026</p>
+                            </div>
+                            <button class="btn-cert-sm w-100 view-cert" 
+                                data-title="Reels From Scratch To Screen" 
+                                data-date="2026-07-23"
+                                data-img="certs/WhatsApp Image 2026-11-18 at 12.19.23 PM (1).jpeg"
+                                data-desc="رحلة إنتاج الريلز الكاملة من الفكرة والكتابة وحتى التصوير والمونتاج للنشر على المنصات.">
+                                <i class="fas fa-expand me-1"></i> عرض الشهادة
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4 -->
+                <div class="col-6 col-md-4 col-lg-3 cert-item" data-category="marketing">
+                    <div class="cert-card">
+                        <div class="cert-thumb-wrapper view-cert-trigger">
+                            <img src="certs/WhatsApp Image 2026-11-18 at 12.17.41 PM.jpeg" alt="Strategy From Planning To Execution" class="cert-thumb">
+                        </div>
+                        <div class="cert-body">
+                            <div>
+                                <span class="cert-category">التسويق والاستراتيجية</span>
+                                <h6 class="cert-title">Strategy From Planning To Execution</h6>
+                                <p class="cert-meta"><i class="fas fa-award me-1"></i> ينفع | نوفمبر 2026</p>
+                            </div>
+                            <button class="btn-cert-sm w-100 view-cert" 
+                                data-title="Strategy From Planning To Execution" 
+                                data-date="2026-11-11"
+                                data-img="certs/WhatsApp Image 2026-11-18 at 12.17.41 PM.jpeg"
+                                data-desc="آليات تحويل الخطط الاستراتيجية إلى خطوات تنفيذية قابلة للقياس والتطبيق العملي.">
+                                <i class="fas fa-expand me-1"></i> عرض الشهادة
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5 -->
+                <div class="col-6 col-md-4 col-lg-3 cert-item" data-category="marketing">
+                    <div class="cert-card">
+                        <div class="cert-thumb-wrapper view-cert-trigger">
+                            <img src="certs/WhatsApp Image 2026-11-18 at 12.17.53 PM.jpeg" alt="دليل التحليل التسويقي للمبتدئين" class="cert-thumb">
+                        </div>
+                        <div class="cert-body">
+                            <div>
+                                <span class="cert-category">التسويق والاستراتيجية</span>
+                                <h6 class="cert-title">دليل التحليل التسويقي للمبتدئين</h6>
+                                <p class="cert-meta"><i class="fas fa-award me-1"></i> ينفع | أغسطس 2026</p>
+                            </div>
+                            <button class="btn-cert-sm w-100 view-cert" 
+                                data-title="دليل التحليل التسويقي للمبتدئين" 
+                                data-date="2026-08-17"
+                                data-img="certs/WhatsApp Image 2026-11-18 at 12.17.53 PM.jpeg"
+                                data-desc="تحليل السوق والمنافسين وفهم مؤشرات الأداء لتحسين نتائج الحملات والمحتوى التسويقي.">
+                                <i class="fas fa-expand me-1"></i> عرض الشهادة
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6 -->
+                <div class="col-6 col-md-4 col-lg-3 cert-item" data-category="marketing">
+                    <div class="cert-card">
+                        <div class="cert-thumb-wrapper view-cert-trigger">
+                            <img src="certs/WhatsApp Image 2026-11-18 at 12.19.24 PM.jpeg" alt="أساسيات التسويق للمبتدئين" class="cert-thumb">
+                        </div>
+                        <div class="cert-body">
+                            <div>
+                                <span class="cert-category">التسويق والاستراتيجية</span>
+                                <h6 class="cert-title">أساسيات التسويق للمبتدئين</h6>
+                                <p class="cert-meta"><i class="fas fa-award me-1"></i> ينفع | أغسطس 2026</p>
+                            </div>
+                            <button class="btn-cert-sm w-100 view-cert" 
+                                data-title="أساسيات التسويق للمبتدئين" 
+                                data-date="2026-08-12"
+                                data-img="certs/WhatsApp Image 2026-11-18 at 12.19.24 PM.jpeg"
+                                data-desc="المفاهيم الجوهرية للتسويق الحديث، استهداف الجمهور، وبناء القيمة للعميل.">
+                                <i class="fas fa-expand me-1"></i> عرض الشهادة
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7 -->
+                <div class="col-6 col-md-4 col-lg-3 cert-item" data-category="production">
+                    <div class="cert-card">
+                        <div class="cert-thumb-wrapper view-cert-trigger">
+                            <img src="certs/WhatsApp Image 2026-11-18 at 12.19.23 PM (2).jpeg" alt="Mobile Photography" class="cert-thumb">
+                        </div>
+                        <div class="cert-body">
+                            <div>
+                                <span class="cert-category">التصوير والإدارة</span>
+                                <h6 class="cert-title">Mobile Photography</h6>
+                                <p class="cert-meta"><i class="fas fa-award me-1"></i> ينفع | نوفمبر 2026</p>
+                            </div>
+                            <button class="btn-cert-sm w-100 view-cert" 
+                                data-title="Mobile Photography" 
+                                data-date="2026-11-08"
+                                data-img="certs/WhatsApp Image 2026-11-18 at 12.19.23 PM (2).jpeg"
+                                data-desc="تقنيات التكوين البصري، الإضاءة، وزوايا التصوير الاحترافية باستخدام كاميرا الهاتف.">
+                                <i class="fas fa-expand me-1"></i> عرض الشهادة
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8 -->
+                <div class="col-6 col-md-4 col-lg-3 cert-item" data-category="production">
+                    <div class="cert-card">
+                        <div class="cert-thumb-wrapper view-cert-trigger">
+                            <img src="certs/WhatsApp Image 2026-11-18 at 12.19.23 PM (4).jpeg" alt="أساسيات التصوير بالموبايل" class="cert-thumb">
+                        </div>
+                        <div class="cert-body">
+                            <div>
+                                <span class="cert-category">التصوير والإدارة</span>
+                                <h6 class="cert-title">أساسيات التصوير بالموبايل</h6>
+                                <p class="cert-meta"><i class="fas fa-award me-1"></i> ينفع | نوفمبر 2026</p>
+                            </div>
+                            <button class="btn-cert-sm w-100 view-cert" 
+                                data-title="أساسيات التصوير بالموبايل" 
+                                data-date="2026-11-04"
+                                data-img="certs/WhatsApp Image 2026-11-18 at 12.19.23 PM (4).jpeg"
+                                data-desc="ضبط إعدادات الكاميرا وإخراج لقطات بصرية عالية الجودة تناسب منصات السوشيال ميديا.">
+                                <i class="fas fa-expand me-1"></i> عرض الشهادة
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9 -->
+                <div class="col-6 col-md-4 col-lg-3 cert-item" data-category="production">
+                    <div class="cert-card">
+                        <div class="cert-thumb-wrapper view-cert-trigger">
+                            <img src="certs/WhatsApp Image 2026-11-18 at 12.18.09 PM.jpeg" alt="Photography basics" class="cert-thumb">
+                        </div>
+                        <div class="cert-body">
+                            <div>
+                                <span class="cert-category">التصوير والإدارة</span>
+                                <h6 class="cert-title">Photography Basics</h6>
+                                <p class="cert-meta"><i class="fas fa-award me-1"></i> ينفع | نوفمبر 2026</p>
+                            </div>
+                            <button class="btn-cert-sm w-100 view-cert" 
+                                data-title="Photography Basics" 
+                                data-date="2026-11-04"
+                                data-img="certs/WhatsApp Image 2026-11-18 at 12.18.09 PM.jpeg"
+                                data-desc="قواعد التصوير الفوتوغرافي الأساسية وتوزيع الإضاءة والعناصر داخل الكادر.">
+                                <i class="fas fa-expand me-1"></i> عرض الشهادة
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10 -->
+                <div class="col-6 col-md-4 col-lg-3 cert-item" data-category="production">
+                    <div class="cert-card">
+                        <div class="cert-thumb-wrapper view-cert-trigger">
+                            <img src="certs/WhatsApp Image 2026-11-18 at 12.19.23 PM.jpeg" alt="تنظيم وإدارة المهام باستخدام نوشن" class="cert-thumb">
+                        </div>
+                        <div class="cert-body">
+                            <div>
+                                <span class="cert-category">التصوير والإدارة</span>
+                                <h6 class="cert-title">تنظيم وإدارة المهام باستخدام نوشن</h6>
+                                <p class="cert-meta"><i class="fas fa-award me-1"></i> ينفع | أغسطس 2026</p>
+                            </div>
+                            <button class="btn-cert-sm w-100 view-cert" 
+                                data-title="تنظيم وإدارة المهام باستخدام نوشن" 
+                                data-date="2026-08-02"
+                                data-img="certs/WhatsApp Image 2026-11-18 at 12.19.23 PM.jpeg"
+                                data-desc="بناء مساحات عمل منظمة وجداول محتوى احترافية على Notion لإدارة المشاريع بكفاءة.">
+                                <i class="fas fa-expand me-1"></i> عرض الشهادة
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="cta-box">
+                <h2 class="fw-bold mb-3">هل تبحث عن محتوى يترك أثراً حقيقياً لدى جمهورك؟</h2>
+                <p class="mb-4 opacity-75">يسعدني التعاون معك في كتابة السكربتات، صناعة الريلز، أو التخطيط لمحتوى علامتك التجارية.</p>
+                <a href="https://wa.me/201270034575?text=%D8%A3%D9%87%D9%84%D8%A7%D9%8B%20%D9%85%D8%A7%D8%B1%D9%8A%D8%A7%D8%8C%20%D8%B4%D9%81%D8%AA%20%D8%A7%D9%84%D8%A8%D9%88%D8%B1%D8%AA%D9%81%D9%88%D9%84%D9%8A%D9%88%20%D8%A8%D8%AA%D8%A7%D8%B9%D9%83%20%D9%88%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A3%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%D8%A7%D9%83%D9%90%20%D8%A8%D8%AE%D8%B5%D9%88%D8%B5%20%D8%B4%D8%BA%D9%84%20%D8%B5%D9%86%D8%A7%D8%B9%D8%A9%20%D9%85%D8%AD%D8%AA%D9%88%D9%89" target="_blank" class="btn-whatsapp">
+                    <i class="fab fa-whatsapp me-2 fs-5"></i> تواصل معي عبر واتساب (01270034575)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/201270034575?text=%D8%A3%D9%87%D9%84%D8%A7%D9%8B%20%D9%85%D8%A7%D8%B1%D9%8A%D8%A7%D8%8C%20%D8%B4%D9%81%D8%AA%20%D8%A7%D9%84%D8%A8%D9%88%D8%B1%D8%AA%D9%81%D9%88%D9%84%D9%8A%D9%88%20%D8%A8%D8%AA%D8%A7%D8%B9%D9%83%20%D9%88%D8%AD%D8%A7%D8%A8%D8%A8%20%D8%A3%D8%AA%D9%88%D8%A7%D8%B5%D9%84%20%D9%85%D8%B9%D8%A7%D9%83%D9%90" target="_blank" class="floating-whatsapp" title="تواصل عبر واتساب">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-0">© 2026 جميع الحقوق محفوظة لـ <strong>ماريا جميل (Maria Gamil)</strong> - صانعة محتوى</p>
+        </div>
+    </footer>
+
+    <!-- Certificate Modal -->
+    <div class="modal fade" id="certModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold text-primary" id="modalCertTitle">اسم الشهادة</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="modalCertImg" src="" alt="صورة الشهادة" class="img-fluid rounded-3 mb-3 border w-100">
+                    <div class="p-3 modal-info-box rounded-3 mb-3 d-flex justify-content-between flex-wrap gap-2">
+                        <span><strong>الاسم:</strong> Maria Gamil</span>
+                        <span><strong>الجهة المانحة:</strong> منصة ينفع (Yanfaa)</span>
+                        <span><strong>تاريخ الإصدار:</strong> <span id="modalCertDate"></span></span>
+                    </div>
+                    <h6 class="fw-bold">المهارات المكتسبة:</h6>
+                    <p class="text-muted mb-0" id="modalCertDesc"></p>
+                </div>
+                <div class="modal-footer border-0 pt-0">
+                    <button type="button" class="btn btn-secondary rounded-3" data-bs-dismiss="modal">إغلاق</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Filter Certificates
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const certItems = document.querySelectorAll('.cert-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filterValue = btn.getAttribute('data-filter');
+
+                certItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Modal Certificate Details
+        const viewCertBtns = document.querySelectorAll('.view-cert');
+        const certModal = new bootstrap.Modal(document.getElementById('certModal'));
+
+        viewCertBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.getElementById('modalCertTitle').textContent = btn.getAttribute('data-title');
+                document.getElementById('modalCertDate').textContent = btn.getAttribute('data-date');
+                document.getElementById('modalCertImg').src = btn.getAttribute('data-img');
+                document.getElementById('modalCertDesc').textContent = btn.getAttribute('data-desc');
+                certModal.show();
+            });
+        });
+
+        // Allow clicking thumbnail directly
+        document.querySelectorAll('.view-cert-trigger').forEach(wrapper => {
+            wrapper.addEventListener('click', () => {
+                wrapper.closest('.cert-card').querySelector('.view-cert').click();
+            });
+        });
+    </script>
+</body>
+</html>
